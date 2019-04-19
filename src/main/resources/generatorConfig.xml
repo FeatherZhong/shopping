@@ -41,8 +41,8 @@
             <property name="rootInterface" value=""/>
         </javaClientGenerator>
 
-        <table tableName="sp_user" domainObjectName="User"/>
-        <table tableName="sp_good" domainObjectName="Good"/>
-<!--        <table tableName="sp_cart" domainObjectName="Cart"/>-->
+        <!--        <table tableName="sp_user" domainObjectName="User"/>-->
+        <!--        <table tableName="sp_good" domainObjectName="Good"/>-->
+        <table tableName="sp_cart" domainObjectName="Cart"/>
     </context>
 </generatorConfiguration>
