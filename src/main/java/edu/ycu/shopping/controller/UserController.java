@@ -46,7 +46,6 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public Msg login(String username, String password, HttpSession session) {
-        System.out.println(username + "      " + password);
         User user = userService.login(username, password);
         if (user != null) {
             session.setAttribute("user", user);

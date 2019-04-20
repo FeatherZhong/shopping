@@ -19,7 +19,7 @@ public class GoodServiceImpl implements GoodService {
     public List<Good> search(String keyword) {
         GoodExample example = new GoodExample();
         GoodExample.Criteria criteria = example.createCriteria();
-        criteria.andNameLike(keyword);
+        criteria.andNameLike('%' + keyword + '%');
         return goodDao.selectByExample(example);
     }
 }
