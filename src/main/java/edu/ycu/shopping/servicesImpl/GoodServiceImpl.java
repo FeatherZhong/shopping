@@ -22,4 +22,9 @@ public class GoodServiceImpl implements GoodService {
         criteria.andNameLike('%' + keyword + '%');
         return goodDao.selectByExample(example);
     }
+
+    @Override
+    public Good selectById(int id) {
+        return goodDao.selectByPrimaryKey(id);
+    }
 }

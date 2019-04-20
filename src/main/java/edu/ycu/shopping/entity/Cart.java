@@ -3,7 +3,7 @@ package edu.ycu.shopping.entity;
 public class Cart {
     private Integer id;
 
-    private Integer goodId;
+    private Good good;
 
     private Integer userId;
 
@@ -17,12 +17,12 @@ public class Cart {
         this.id = id;
     }
 
-    public Integer getGoodId() {
-        return goodId;
+    public Good getGood() {
+        return good;
     }
 
-    public void setGoodId(Integer goodId) {
-        this.goodId = goodId;
+    public void setGood(Good good) {
+        this.good = good;
     }
 
     public Integer getUserId() {

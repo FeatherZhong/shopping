@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface GoodService {
     List<Good> search(String keyword);
+
+    Good selectById(int id);
 }
