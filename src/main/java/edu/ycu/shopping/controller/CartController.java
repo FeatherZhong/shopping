@@ -23,6 +23,21 @@ public class CartController {
     @Autowired
     GoodService goodService;
 
+    @RequestMapping(value = "/BuyCart_1", method = RequestMethod.GET)
+    public String toCart1() {
+        return "buycart_1";
+    }
+
+    @RequestMapping(value = "/BuyCart_2", method = RequestMethod.GET)
+    public String toCart2() {
+        return "buycart_2";
+    }
+
+    @RequestMapping(value = "/BuyCart_3", method = RequestMethod.GET)
+    public String toCart3() {
+        return "buycart_3";
+    }
+
     @ResponseBody
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public Msg getCarts(HttpSession session) {

@@ -11,6 +11,7 @@ function dealwithCart() {
             jq("#cars").empty();
             jq("#cart_sum").hide();
             jq("#checkout").hide();
+            jq("#cart_count").html("购物车 [ <span>0</span> ]");
             if (result.code == 0) {
                 var carts = result.extend.cart;
                 if (carts.length == 0) {
@@ -28,18 +29,31 @@ function dealwithCart() {
                             "                            <a href=\"javascript:void(0)\">" + item.good.name + "</a>\n" +
                             "                        </div>")
                         var cartPrice = jq("          <div class=\"price\">\n" +
-                            "                            <font color=\"#ff4e00\">￥" + item.good.price + "</font>X" + item.count + "\n" +
+                            "                            <font color=\"#ff4e00\">￥" + item.good.price + "</font>\&nbsp;X" + item.count + "\n" +
                             "                        </div>")
                         jq("<li></li>").append(cartImage)
                             .append(cartName)
                             .append(cartPrice)
                             .appendTo("#cars")
-                        jq("#cart_sum").html("共计&nbsp; <font color=\"#ff4e00\">￥</font><span>" + price_sum + "</span>")
+                        jq("#cart_count").html("购物车 [ <span>" + carts.length + "</span> ]");
+                        jq("#cart_sum").html("共计\&nbsp; <font color=\"#ff4e00\">￥</font><span>" + price_sum + "</span>")
                         jq("#checkout").show();
                         jq("#cart_sum").show()
                     })
                 }
 
+            }
+        }
+    })
+}
+
+function logout() {
+    jq.ajax({
+        url: "/logout",
+        type: "POST",
+        success: function (result) {
+            if (result.code == 0) {
+                window.location.reload();
             }
         }
     })

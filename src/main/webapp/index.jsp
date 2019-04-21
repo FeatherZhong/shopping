@@ -126,6 +126,7 @@
                         你好,
                         <a href="${pageContext.request.contextPath}/member">${sessionScope.user.username}</a>&nbsp;
                         <a href="${pageContext.request.contextPath}/member" style="color:#ff4e00;">个人中心</a>&nbsp;|&nbsp;
+                        <a id="logout" style="color:#ff4e00;" onclick="logout()">退出</a>&nbsp;|&nbsp;
                     </c:if>
                         <a href="#">我的订单</a>&nbsp;|
                 </span>
@@ -177,7 +178,7 @@
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="index.jsp"><img src="images/logo.png"/></a></div>
+    <div class="logo"><a href="/"><img src="images/logo.png"/></a></div>
     <div class="search">
         <form>
             <input id="keyword" type="text" value="" class="s_ipt"/>
@@ -187,7 +188,7 @@
                 href="#">连衣裙</a></span>
     </div>
     <div class="i_car">
-        <div class="car_t">购物车 [ <span>3</span> ]</div>
+        <div id="cart_count" class="car_t">购物车 [ <span>3</span> ]</div>
         <div class="car_bg">
             <!--Begin 购物车未登录 Begin-->
             <c:if test="${sessionScope.user==null}">
@@ -199,7 +200,7 @@
             <ul id="cars" class="cars">
             </ul>
             <div id="cart_sum" class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span></div>
-            <div id="checkout" class="price_a"><a href="#">去购物车结算</a></div>
+            <div id="checkout" class="price_a"><a href="${pageContext.request.contextPath}/BuyCart_1">去购物车结算</a></div>
             <!--End 购物车已登录 End-->
         </div>
     </div>
@@ -486,7 +487,7 @@
         </div>
         <!--End 商品分类详情 End-->
         <ul class="menu_r">
-            <li><a href="index.jsp">首页</a></li>
+            <li><a href="/">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>

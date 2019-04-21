@@ -72,4 +72,14 @@ public class UserController {
             return Msg.fail().add("message", "用户名不可用");
         }
     }
+
+    /**
+     * 用户登出
+     */
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @ResponseBody
+    public Msg logout(HttpSession session) {
+        session.removeAttribute("user");
+        return Msg.success();
+    }
 }

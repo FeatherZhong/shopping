@@ -112,6 +112,7 @@
                         你好,
                         <a href="${pageContext.request.contextPath}/member">${sessionScope.user.username}</a>&nbsp;
                         <a href="${pageContext.request.contextPath}/member" style="color:#ff4e00;">个人中心</a>&nbsp;|&nbsp;
+                        <a id="logout" style="color:#ff4e00;" onclick="logout()">退出</a>&nbsp;|&nbsp;
                     </c:if>
                         <a href="#">我的订单</a>&nbsp;|
                 </span>
@@ -162,7 +163,7 @@
 </div>
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="${pageContext.request.contextPath}/index.jsp"><img src="images/logo1.png"/></a></div>
+        <div class="m_logo"><a href="${pageContext.request.contextPath}/"><img src="images/logo1.png"/></a></div>
         <div class="m_search">
             <form>
                 <input type="text" value="" class="m_ipt"/>
@@ -172,7 +173,7 @@
                     href="#">日用品</a><a href="#">连衣裙</a></span>
         </div>
         <div class="i_car">
-            <div class="car_t">购物车 [ <span>3</span> ]</div>
+            <div id="cart_count" class="car_t">购物车 [ <span>3</span> ]</div>
             <div class="car_bg">
                 <!--Begin 购物车未登录 Begin-->
                 <c:if test="${sessionScope.user==null}">
@@ -184,7 +185,7 @@
                 <ul id="cars" class="cars">
                 </ul>
                 <div id="cart_sum" class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span></div>
-                <div id="checkout" class="price_a"><a href="#">去购物车结算</a></div>
+                <div id="checkout" class="price_a"><a href="${pageContext.request.contextPath}/BuyCart_1">去购物车结算</a></div>
                 <!--End 购物车已登录 End-->
             </div>
         </div>
