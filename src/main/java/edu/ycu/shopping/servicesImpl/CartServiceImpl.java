@@ -20,7 +20,43 @@ public class CartServiceImpl implements CartService {
         CartExample example = new CartExample();
         CartExample.Criteria criteria = example.createCriteria();
         criteria.andUserIdEqualTo(userId);
-        cartDao.selectByExample(example);
         return cartDao.selectByExample(example);
+    }
+
+    @Override
+    public Cart getCartsByUserAndGood(int userId, int goodId) {
+        CartExample example = new CartExample();
+        CartExample.Criteria criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        criteria.andGoodIdEqualTo(goodId);
+        List<Cart> carts = cartDao.selectByExample(example);
+        if (carts.isEmpty()) {
+            return null;
+        } else {
+            return carts.get(0);
+        }
+    }
+
+    @Override
+    public int insertCart(int goodId, int userId) {
+        return cartDao.insert(goodId, userId);
+    }
+
+    @Override
+    public int updateCart(Cart cart) {
+        return cartDao.updateByPrimaryKey(cart);
+    }
+
+    @Override
+    public int delCart(Cart cart) {
+        return cartDao.deleteByPrimaryKey(cart.getId());
+    }
+
+    @Override
+    public int delAllCart(int userId) {
+        CartExample example = new CartExample();
+        CartExample.Criteria criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        return cartDao.deleteByExample(example);
     }
 }

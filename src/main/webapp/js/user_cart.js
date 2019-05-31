@@ -58,3 +58,66 @@ function logout() {
         }
     })
 }
+
+function subToCart(goodId) {
+    jq.ajax({
+        url: "/cart_sub",
+        type: "POST",
+        data: "goodId=" + goodId,
+        success: function (result) {
+            if (result.code == 0) {
+                window.location.reload();
+            } else {
+                alert(result.msg);
+            }
+        }
+    })
+}
+
+function addToCart(goodId) {
+    jq.ajax({
+        url: "/cart_add",
+        type: "POST",
+        data: "goodId=" + goodId,
+        success: function (result) {
+            if (result.code == 0) {
+                window.location.reload();
+            } else {
+                alert(result.msg);
+            }
+        }
+    })
+}
+
+function delAllCarts() {
+    jq.ajax({
+        url: "/cart_del_all",
+        type: "POST",
+        success: function (result) {
+            if (result.code == 0) {
+                window.location.reload();
+            } else {
+                alert(result.msg);
+            }
+        }
+    })
+}
+
+function delToCart(goodId) {
+    jq.ajax({
+        url: "/cart_del",
+        type: "POST",
+        data: "goodId=" + goodId,
+        success: function (result) {
+            if (result.code == 0) {
+                window.location.reload();
+            } else {
+                alert(result.msg);
+            }
+        }
+    })
+}
+
+function toCartsConfirmAll() {
+    window.location.href="/BuyCart_2"
+}

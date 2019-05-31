@@ -729,7 +729,8 @@
             var goodName = $("<div class=\"name\"><a href=\"#\">" + item.name + "</a></div>")
             var goodCart = $("<div class=\"carbg\">\n" +
                 "                            <a href=\"#\" class=\"ss\">收藏</a>\n" +
-                "                            <a href=\"#\" class=\"j_car\">加入购物车</a>\n" +
+                "                            <a onclick=\"addToCart(" + item.id +
+                ");\"' class=\"j_car\">加入购物车</a>\n" +
                 "                        </div>")
 
             $("<li></li>").append(goodImage)

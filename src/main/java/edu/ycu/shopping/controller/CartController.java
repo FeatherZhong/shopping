@@ -49,4 +49,62 @@ public class CartController {
             return Msg.success().add("cart", carts);
         }
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/cart_sub", method = RequestMethod.POST)
+    public Msg subCartGood(int goodId, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        Cart cart = cartService.getCartsByUserAndGood(user.getId(), goodId);
+        if (cart.getCount() == 1) {
+            cartService.delCart(cart);
+            return Msg.success();
+        } else {
+            cart.setCount(cart.getCount() - 1);
+            if (cartService.updateCart(cart) > 0) {
+                return Msg.success();
+            } else {
+                return Msg.fail();
+            }
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/cart_add", method = RequestMethod.POST)
+    public Msg addCartGood(int goodId, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            return Msg.fail("请登陆");
+        }
+        Cart cart = cartService.getCartsByUserAndGood(user.getId(), goodId);
+        if (cart == null) {
+            cartService.insertCart(goodId, user.getId());
+            return Msg.success();
+        }
+        cart.setCount(cart.getCount() + 1);
+        if (cartService.updateCart(cart) > 0) {
+            return Msg.success();
+        } else {
+            return Msg.fail();
+        }
+    }
+
+    @RequestMapping(value = "/cart_del", method = RequestMethod.POST)
+    @ResponseBody
+    public Msg delCartGood(int goodId, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        Cart cart = cartService.getCartsByUserAndGood(user.getId(), goodId);
+        if (cartService.delCart(cart) > 0) {
+            return Msg.success();
+        } else {
+            return Msg.fail();
+        }
+    }
+
+    @RequestMapping(value = "/cart_del_all", method = RequestMethod.POST)
+    @ResponseBody
+    public Msg delCartGoods(HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        cartService.delAllCart(user.getId());
+        return Msg.success();
+    }
 }

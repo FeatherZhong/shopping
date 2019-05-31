@@ -2,7 +2,9 @@ package edu.ycu.shopping.dao;
 
 import edu.ycu.shopping.entity.Cart;
 import edu.ycu.shopping.entity.CartExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface CartMapper {
@@ -12,7 +14,7 @@ public interface CartMapper {
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Cart record);
+    int insert(@Param("goodId") int goodId, @Param("userId") int userId);
 
     int insertSelective(Cart record);
 

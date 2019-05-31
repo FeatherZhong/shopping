@@ -101,10 +101,8 @@
         </if>
     </delete>
     <insert id="insert" parameterType="edu.ycu.shopping.entity.Cart">
-    insert into sp_cart (id, good_id, user_id, 
-      count)
-    values (#{id,jdbcType=INTEGER}, #{goodId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{count,jdbcType=INTEGER})
+    insert into sp_cart (good_id, user_id)
+    values ( #{goodId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER})
   </insert>
     <insert id="insertSelective" parameterType="edu.ycu.shopping.entity.Cart">
         insert into sp_cart
@@ -190,8 +188,7 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="edu.ycu.shopping.entity.Cart">
     update sp_cart
-    set good_id = #{goodId,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=INTEGER},
+    set user_id = #{userId,jdbcType=INTEGER},
       count = #{count,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

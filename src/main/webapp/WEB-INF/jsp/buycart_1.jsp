@@ -176,23 +176,23 @@
         <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a
                 href="#">连衣裙</a></span>
     </div>
-<%--    <div class="i_car">--%>
-<%--        <div class="car_t">购物车 [ <span>3</span> ]</div>--%>
-<%--        <div class="car_bg">--%>
-<%--            <!--Begin 购物车未登录 Begin-->--%>
-<%--            <c:if test="${sessionScope.user==null}">--%>
-<%--                <div class="un_login">还未登录！<a href="${pageContext.request.contextPath}/login"--%>
-<%--                                              style="color:#ff4e00;">马上登录</a> 查看购物车！--%>
-<%--                </div>--%>
-<%--            </c:if>--%>
-<%--            <!--End 购物车未登录 End-->--%>
-<%--            <ul id="cars" class="cars">--%>
-<%--            </ul>--%>
-<%--            <div id="cart_sum" class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span></div>--%>
-<%--            <div id="checkout" class="price_a"><a href="#">去购物车结算</a></div>--%>
-<%--            <!--End 购物车已登录 End-->--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <%--    <div class="i_car">--%>
+    <%--        <div class="car_t">购物车 [ <span>3</span> ]</div>--%>
+    <%--        <div class="car_bg">--%>
+    <%--            <!--Begin 购物车未登录 Begin-->--%>
+    <%--            <c:if test="${sessionScope.user==null}">--%>
+    <%--                <div class="un_login">还未登录！<a href="${pageContext.request.contextPath}/login"--%>
+    <%--                                              style="color:#ff4e00;">马上登录</a> 查看购物车！--%>
+    <%--                </div>--%>
+    <%--            </c:if>--%>
+    <%--            <!--End 购物车未登录 End-->--%>
+    <%--            <ul id="cars" class="cars">--%>
+    <%--            </ul>--%>
+    <%--            <div id="cart_sum" class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span></div>--%>
+    <%--            <div id="checkout" class="price_a"><a href="#">去购物车结算</a></div>--%>
+    <%--            <!--End 购物车已登录 End-->--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
 </div>
 <!--End Header End-->
 <!--Begin Menu Begin-->
@@ -496,7 +496,8 @@
 
     <!--Begin 第一步：查看购物车 Begin -->
     <div class="content mar_20">
-        <table border="0" class="car_tab" style="width:1200px; margin-bottom:50px;" cellspacing="0" cellpadding="0">
+        <table id="cartitem_lists2" border="0" class="car_tab" style="width:1200px; margin-bottom:50px;" cellspacing="0"
+               cellpadding="0">
             <tr>
                 <td class="car_th" width="490">商品名称</td>
                 <td class="car_th" width="140">属性</td>
@@ -505,89 +506,7 @@
                 <td class="car_th" width="140">返还积分</td>
                 <td class="car_th" width="150">操作</td>
             </tr>
-            <tr>
-                <td>
-                    <div class="c_s_img"><img src="images/c_1.jpg" width="73" height="73"/></div>
-                    Rio 锐澳 水蜜桃味白兰地鸡尾酒（预调酒） 275ml
-                </td>
-                <td align="center">颜色：灰色</td>
-                <td align="center">
-                    <div class="c_num">
-                        <input type="button" value="" onclick="jianUpdate1(jq(this));" class="car_btn_1"/>
-                        <input type="text" value="1" name="" class="car_ipt"/>
-                        <input type="button" value="" onclick="addUpdate1(jq(this));" class="car_btn_2"/>
-                    </div>
-                </td>
-                <td align="center" style="color:#ff4e00;">￥620.00</td>
-                <td align="center">26R</td>
-                <td align="center"><a onclick="ShowDiv('MyDiv','fade')">删除</a>&nbsp; &nbsp;<a href="#">加入收藏</a></td>
-            </tr>
-            <tr class="car_tr">
-                <td>
-                    <div class="c_s_img"><img src="images/c_2.jpg" width="73" height="73"/></div>
-                    Rio 锐澳 水蜜桃味白兰地鸡尾酒（预调酒） 275ml
-                </td>
-                <td align="center">颜色：灰色</td>
-                <td align="center">
-                    <div class="c_num">
-                        <input type="button" value="" onclick="jianUpdate1(jq(this));" class="car_btn_1"/>
-                        <input type="text" value="1" name="" class="car_ipt"/>
-                        <input type="button" value="" onclick="addUpdate1(jq(this));" class="car_btn_2"/>
-                    </div>
-                </td>
-                <td align="center" style="color:#ff4e00;">￥620.00</td>
-                <td align="center">26R</td>
-                <td align="center"><a href="#">删除</a>&nbsp; &nbsp;<a href="#">加入收藏</a></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="c_s_img"><img src="images/c_3.jpg" width="73" height="73"/></div>
-                    Rio 锐澳 水蜜桃味白兰地鸡尾酒（预调酒） 275ml
-                </td>
-                <td align="center">颜色：灰色</td>
-                <td align="center">
-                    <div class="c_num">
-                        <input type="button" value="" onclick="jianUpdate1(jq(this));" class="car_btn_1"/>
-                        <input type="text" value="1" name="" class="car_ipt"/>
-                        <input type="button" value="" onclick="addUpdate1(jq(this));" class="car_btn_2"/>
-                    </div>
-                </td>
-                <td align="center" style="color:#ff4e00;">￥620.00</td>
-                <td align="center">26R</td>
-                <td align="center"><a href="#">删除</a>&nbsp; &nbsp;<a href="#">加入收藏</a></td>
-            </tr>
-            <tr class="car_tr">
-                <td>
-                    <div class="c_s_img"><img src="images/c_4.jpg" width="73" height="73"/></div>
-                    Rio 锐澳 水蜜桃味白兰地鸡尾酒（预调酒） 275ml
-                </td>
-                <td align="center">颜色：灰色</td>
-                <td align="center">
-                    <div class="c_num">
-                        <input type="button" value="" onclick="jianUpdate1(jq(this));" class="car_btn_1"/>
-                        <input type="text" value="1" name="" class="car_ipt"/>
-                        <input type="button" value="" onclick="addUpdate1(jq(this));" class="car_btn_2"/>
-                    </div>
-                </td>
-                <td align="center" style="color:#ff4e00;">￥620.00</td>
-                <td align="center">26R</td>
-                <td align="center"><a href="#">删除</a>&nbsp; &nbsp;<a href="#">加入收藏</a></td>
-            </tr>
-            <tr height="70">
-                <td colspan="6" style="font-family:'Microsoft YaHei'; border-bottom:0;">
-                    <label class="r_rad"><input type="checkbox" name="clear" checked="checked"/></label><label
-                        class="r_txt">清空购物车</label>
-                    <span class="fr">商品总价：<b style="font-size:22px; color:#ff4e00;">￥2899</b></span>
-                </td>
-            </tr>
-            <tr valign="top" height="150">
-                <td colspan="6" align="right">
-                    <a href="#"><img src="images/buy1.gif"/></a>&nbsp; &nbsp; <a href="#"><img
-                        src="images/buy2.gif"/></a>
-                </td>
-            </tr>
         </table>
-
     </div>
     <!--End 第一步：查看购物车 End-->
 
@@ -714,4 +633,68 @@
 <!--[if IE 6]>
 <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
+
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            url: "/cart",
+            type: "GET",
+            success: function (result) {
+                var carts = result.extend.cart;
+                var price_sum = 0;
+                $.each(carts, function (index, item) {
+                    price_sum += item.count * item.good.price;
+                    var imageAndName = $("" +
+                        "<td  class=\"car_th\" width=\"490\" align=\"center\"> " +
+                        "   <div class=\"c_s_img\"><img src=\"/images/" + item.good.image + "\" width=\"73\" height=\"73\" /></div>" + item.good.name +
+                        "</td> ")
+
+                    var color = $("<td class=\"car_th\" width=\"140\" align=\"center\">颜色：灰色</td> ")
+                    var addAndSub = $("" +
+                        "<td class=\"car_th\" width=\"150\"align=\"center\"> " +
+                        "   <div class=\"c_num\">" +
+                        "       <input type=\"button\" onclick=\"subToCart(" + item.good.id +
+                        ");\" class=\"car_btn_1\" />" +
+                        "       <input type=\"text\" value=\"" + item.count + "\" class=\"car_ipt\" /> " +
+                        "       <input type=\"button\"  onclick=\"addToCart(" + item.good.id +
+                        ");\" class=\"car_btn_2\" />" +
+                        "   </div> " +
+                        "</td> ")
+                    var price = $("" +
+                        "<td  class=\"car_th\" width=\"130\" align=\"center\" style=\"color:#ff4e00;\">￥" + item.good.price + "</td> ")
+                    var jifen = $("<td class=\"car_th\" width=\"140\" align=\"center\">26R</td> ")
+                    var delOrBuy = $("" +
+                        "<td class=\"car_th\" width=\"150\" align=\"center\">" +
+                        "   <a href=\"#\" onclick=\"delToCart(" + item.good.id +
+                        ")\">删除</a>&nbsp; &nbsp;<a>购买</a>" +
+                        "</td>")
+//???在jq里面的jq里面不用再加$  {pageContext.request.contextPath}
+                    $("<tr></tr>").append(imageAndName)
+                        .append(color)
+                        .append(addAndSub)
+                        .append(price)
+                        .append(jifen)
+                        .append(delOrBuy)
+                        .appendTo("#cartitem_lists2")
+                })
+                var total = $("" +
+                    "<td colspan=\"6\" style=\"font-family:'Microsoft YaHei'; border-bottom:0;\"> " +
+                    "   <label onclick=\"delAllCarts()\" class=\"r_txt\">清空购物车</label> " +
+                    "   <span class=\"fr\">商品总价：<b style=\"font-size:22px; color:#ff4e00;\">￥" + price_sum + "</b></span>" +
+                    "   <div id=\"cartitem_totalprice2\" class=\"price_sum\"> </div> " +
+                    "</td>")
+                $("<tr></tr>").append(total)
+                    .appendTo("#cartitem_lists2")
+                var buytotal = $("" +
+                    "<td colspan=\"6\" align=\"right\">" +
+                    "   <img src=\"images/buy1.gif\" />&nbsp; &nbsp; " +
+                    "   <img src=\"images/buy2.gif\" onclick=\"toCartsConfirmAll()\"/> " +
+                    "</td>")
+                $("<tr></tr>").append(buytotal)
+                    .appendTo("#cartitem_lists2")
+            }
+        })
+    });
+
+</script>
 </html>
