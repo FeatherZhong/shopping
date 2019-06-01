@@ -34,6 +34,11 @@ public class UserController {
         return "member";
     }
 
+    @RequestMapping(value = "/member_order", method = RequestMethod.GET)
+    public String toMemberOrder() {
+        return "member_order";
+    }
+
     @ResponseBody
     @RequestMapping("/checkUser")
     public Msg checkUser(@RequestParam("username") String username) {

@@ -43,6 +43,7 @@
 
         <!--        <table tableName="sp_user" domainObjectName="User"/>-->
         <!--        <table tableName="sp_good" domainObjectName="Good"/>-->
-        <table tableName="sp_cart" domainObjectName="Cart"/>
+        <table tableName="sp_order_item" domainObjectName="OrderItem"/>
+        <table tableName="sp_order_record" domainObjectName="OrderRecord"/>
     </context>
 </generatorConfiguration>
